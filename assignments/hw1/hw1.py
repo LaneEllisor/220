@@ -1,35 +1,60 @@
 """
-Name: <your name goes here – first and last>
-<ProgramName>.py
+Name: Chapman Lane Ellisor
+hw1.py
 
-Problem: <Brief, one or two sentence description of the problem that this program solves, in your own words.>
+Problem: Simple function definitions and user inputs are exercised.
 
 Certification of Authenticity:
-<include one of the following>
 I certify that this assignment is entirely my own work.
-I certify that this assignment is my own work, but I discussed it with: <Name(s)>
 """
-
+# there are no required libraries so we begin by defining several functions
 
 def calc_rec_area():
-    pass
-
+    length = eval(input("Enter the length: "))
+    width = eval(input("Enter the width: ")) # user inputs
+    area = length * width # equation for area
+    print("Area =", area) # displaying the area with text
 
 def calc_volume():
-    pass
+    length = eval(input("Enter the length: "))
+    width = eval(input("Enter the width: "))
+    height = eval(input("Enter the height: "))
+    volume = length * width * height
+    print("Volume =", volume)
 
 
 def shooting_percentage():
-    pass
+    total_shots = eval(input("Enter the players total shots: "))
+    shots_made = eval(input("Enter the shots the player made: "))
+    percentage  = shots_made / total_shots * 100
+    print("Shooting Percentage: ", percentage, "%")
 
 
 def coffee():
-    pass
+    pounds_purchased = eval(input("How many pounds of coffee would you like? "))
+    price = 1.50 + 10.50*pounds_purchased+0.86*pounds_purchased
+    print("Your total is: ", price)
 
 
 def kilometers_to_miles():
-    pass
+    travelled = eval(input("How many kilometers did  you travel? "))
+    miles = 1 / (1.61) * travelled
+    print("That's ", miles, "miles!")
+
+# calling each function to test for correctness
+calc_rec_area()
+
+calc_volume()
+
+shooting_percentage()
+
+coffee()
+
+kilometers_to_miles()
+
+
 
 
 if __name__ == '__main__':
     pass
+
