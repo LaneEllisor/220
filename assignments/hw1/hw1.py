@@ -41,19 +41,6 @@ def kilometers_to_miles():
     miles = 1 / (1.61) * travelled
     print("That's ", miles, "miles!")
 
-# calling each function to test for correctness
-calc_rec_area()
-
-calc_volume()
-
-shooting_percentage()
-
-coffee()
-
-kilometers_to_miles()
-
-
-
 
 if __name__ == '__main__':
     pass
