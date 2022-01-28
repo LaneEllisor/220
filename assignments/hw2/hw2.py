@@ -1,6 +1,6 @@
 """
-Name: <your name goes here – first and last>
-<ProgramName>.py
+Name: ChapmanEllisor
+hw2.py
 
 Problem: <Brief, one or two sentence description of the problem that this program solves, in your own words.>
 
@@ -9,19 +9,37 @@ Certification of Authenticity:
 I certify that this assignment is entirely my own work.
 I certify that this assignment is my own work, but I discussed it with: <Name(s)>
 """
+
 import math
 
 
 def sum_of_threes():
-    pass
+    upper_bound = eval(input("Enter the Upper Bound"))
+    for i in range(upper_bound):
+        if (i%3):
+            sum+sum+i
+    print(sum)
 
 
 def multiplication_table():
-    pass
+    for num in range(10):
+        i = 1
+        while i <= numInput:
+            product = num * i
+            print(num, " * ", i, " = ", product)
+            i = i + 1
+        print("")
+        num = num + 1
 
 
 def triangle_area():
-    pass
+    a = eval(input("a="))
+    b = eval(input("b="))
+    c = eval(input("c="))
+
+    s = (a+b+c)/2
+    Area = math.sqrt(s*(s-a)*(s-b)*(s-c))
+    print("The area is", Area)
 
 
 def sum_squares():
@@ -29,8 +47,13 @@ def sum_squares():
 
 
 def power():
-    pass
+    base = eval(input("base="))
+    power = eval(input("power="))
 
+    power_ab = base**power
+    print(base, "^", power, "=", power_ab)
 
 if __name__ == '__main__':
     pass
+
+#testing
