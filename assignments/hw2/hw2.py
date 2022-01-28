@@ -8,7 +8,6 @@ Certification of Authenticity: I certify that this assignment is entirely my own
 
 import math
 
-
 def sum_of_threes():
     upper_bound = eval(input("Enter the Upper Bound"))
     sum = 0
@@ -18,14 +17,12 @@ def sum_of_threes():
             sum = sum + i
     print("The sum of threes is", sum)
 
-
-
-
 def multiplication_table():
-    one_to_nine = [[x * y for x in range(1, 11)] for y in range(1, 10)]
-
-    print(one_to_nine)
-
+    N = 10
+    for i in range(1,N+1):
+        for j in range(1, N+1):
+            print(str(i*j), end="\t")
+        print()
 
 def triangle_area():
     a = eval(input("a="))
@@ -36,9 +33,9 @@ def triangle_area():
     Area = math.sqrt(s*(s-a)*(s-b)*(s-c))
     print("The area is", Area)
 
-
 def sum_squares():
-    pass
+    lower_range = eval(input("Enter Lower Range:"))
+    upper_range = eval(input("Enter Upper Range"))
 
 
 def power():
@@ -51,5 +48,4 @@ def power():
 if __name__ == '__main__':
     pass
 
-#testing
-multiplication_table()
+
