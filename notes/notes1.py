@@ -40,4 +40,4 @@ my_circle.draw(win)
 
 
 
-input("hit enter to exit") #causes problem to wait at this line
+#input("hit enter to exit") #causes problem to wait at this line
