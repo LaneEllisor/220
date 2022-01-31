@@ -38,3 +38,18 @@ print("The RMS average is:", rms)
 print("The harmonic mean is:", harmonic_mean)
 print("The geometric mean is:", geometric_mean)
 
+'''
+Questions:
+1. The program will take in several user input values,
+perform different sums and porducts of them, and output assorted statistic
+2. The inputs are a set of floating point values and outputs will be rounded floats.
+The inputs are the values of the sum or product, the outputs are the root mean square aver,
+the harmonic mean, and the geometric mean. 
+3. Pseudocode:
+Import Libraries->
+Initialize variables->
+User input length of sum->
+Perform a summation for each user input in the length of the sum
+Perform statistics onto each sum/product
+Print outputs
+'''
