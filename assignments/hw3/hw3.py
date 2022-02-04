@@ -39,13 +39,15 @@ def newton():
 
 def sequence():
     number_of_terms = int(input("How many terms would you like? "))
-    x = 1
-    odd = 1
+    term_one = 1
+    sequence_terms = 0
     for k in range(number_of_terms):
-        odd *= (2*k+1)
-        print(odd ,"", end="")
+        sequence_terms += (1/2)*(2*k+(-1)**(k+1)-1)
+        print(sequence_terms)
+        sequence=term_one + sequence_terms
+        #print(terms ,"", end="")
 
-#sequence()
+sequence()
 
 def pi():
     number_of_values = int(input("How many terms in the series? "))
@@ -57,7 +59,7 @@ def pi():
         pi_approx += multiplicative_term
     print(pi_approx)
 
-pi()
+#pi()
 if __name__ == '__main__':
     pass
 
