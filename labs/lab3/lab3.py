@@ -1,0 +1,23 @@
+from math import *
+
+def average_vehicles():
+    roads_surveyed = int(input("How many roads were surveyed? "))
+    sum = 0
+    for i in range(roads_surveyed):
+        print("How many days was road", i+1, end=' ')
+        days_surveyed = int(input("surveyed?   "))
+        for k in range(days_surveyed):
+            print("How many cars traveled on day", k+1, end='')
+            cars_per_day = int(input("?  "))
+            sum += cars_per_day
+
+        average_veh = sum / (k+1)
+        print("Road", i + 1, "average vehicles per day:", round(average_veh,3))
+
+    total_vehicles = sum
+    average_vehicles_per_road = total_vehicles/roads_surveyed
+    print("Total number of vehicles traveled on all roads:", total_vehicles)
+    print("Average number of vehicles per road:", round(average_vehicles_per_road,2))
+
+
+average_vehicles()
