@@ -1,4 +1,9 @@
-
+"""
+# Name: Chapman Lane Ellisor
+# lab3.py
+# Problem: Finding averages over multiple loops
+# Certification of Authenticity: I certify that this assignment is entirely my own work.
+"""
 
 def average_vehicles():
     roads_surveyed = int(input("How many roads were surveyed? "))
