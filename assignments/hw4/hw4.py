@@ -2,14 +2,13 @@
 Name: Chapman Ellisor
 hw4.py
 
-Problem: <Brief, one or two sentence description of the problem that this program solves, in your own words.>
+Problem: Graphics Projects
 
-Certification of Authenticity:
-I certify that this assignment is entirely my own work.
+Certification of Authenticity: I certify that this assignment is entirely my own work.
 """
 
 from graphics import *
-
+from math import sqrt
 
 def squares():
     # Creates a graphical window
@@ -32,7 +31,7 @@ def squares():
     shape.draw(win)
 
     # allows the user to click multiple times to move the rectangle
-    for i in range(num_clicks+1):
+    for _ in range(num_clicks+1):
         click = win.getMouse()
         center = shape.getCenter()  # center of rectangle
 
@@ -48,17 +47,57 @@ def squares():
         shape2.setFill("red")
         shape2.draw(win)
 
-    text = Text(Point(50,50), "Click again to close")
+    text = Text(Point(200,350), "Click again to close")
     text.draw(win)
     win.getMouse()
     win.close()
 
 
-#squares()
+squares()
 
 
 def rectangle():
-    pass
+    # Creates a graphical window
+    width = 400
+    height = 400
+    win = GraphWin("Clicks", width, height)
+
+    text1 = Text( Point(200,200), "Click again to close")
+    text1.setSize(8)
+    text1.draw(win)
+
+    #draw rect
+    point_one = win.getMouse()
+    point_one.draw(win)
+    point_two = win.getMouse()
+
+
+    line = Rectangle(point_one, point_two)
+    line.draw(win)
+    line.setFill("green")
+
+    # stats
+    length = abs(point_two.getY()-point_one.getY())
+    width = abs(point_two.getX() - point_one.getX())
+    area = length* width
+    perimeter = 2*(length + width)
+
+    perimeter_string = str(perimeter)
+    area_string = str(area)
+
+
+    text_one = Text(Point(200,360), "Perimeter: "+perimeter_string)
+    text_one.setSize(8)
+    text_one.draw(win)
+
+    text_two = Text(Point(200, 370), "Area: " + area_string)
+    text_two.setSize(8)
+    text_two.draw(win)
+
+    win.getMouse()
+    win.close()
+
+#rectangle()
 
 
 def circle():
@@ -67,46 +106,44 @@ def circle():
     height = 400
     win = GraphWin("Clicks", width, height)
 
-    # number of times user can move circle
-    num_clicks = 5
+    # center click
+    center = win.getMouse()
+    center.draw(win)
+    # radial click
+    radius = win.getMouse()
+    radius.draw(win)
 
-    # create a space to instruct user
-    inst_pt = Point(width / 2, height - 10)
-    instructions = Text(inst_pt, "Click to move square")
-    instructions.draw(win)
 
-    # builds a circle
-    shape = Rectangle(Point(50, 50), Point(0, 0))
-    shape.setOutline("red")
-    shape.setFill("red")
-    shape.draw(win)
+    dx = radius.getX()-center.getX()
+    dy = radius.getY()-center.getY()
 
-    # allows the user to click multiple times to move the rectangle
-    for i in range(num_clicks + 1):
-        click = win.getMouse()
-        center = shape.getCenter()  # center of rectangle
+    d = sqrt(dx**2+dy**2)
+    d_string = str(round(d,4))
 
-        # move amount is distance from center of rectangle to the
-        # point where the user clicked
-        change_x = click.getX() - center.getX()
-        change_y = click.getY() - center.getY()
-        shape.move(change_x, change_y)
+    w = Circle(center, d)
 
-        shape2 = Rectangle(Point(click.getX() - 25, click.getY() - 25),
-                           Point(click.getX() + 25, click.getY() + 25))
-        shape2.setOutline("red")
-        shape2.setFill("red")
-        shape2.draw(win)
+    w.setFill("lightblue")
+    w.draw(win)
 
-    text = Text(Point(50, 50), "Click again to close")
-    text.draw(win)
+    text_one = Text(Point(200, 360), "Radius: " + d_string)
+    text_one.setSize(8)
+    text_one.draw(win)
+
+
     win.getMouse()
     win.close()
 
+#circle()
+
+
 
 def pi2():
-    pass
-
+    terms_to_sum = int(input("Enter the number of terms to sum:   "))
+    for x_i in range(terms_to_sum):
+        x = 4.0/(2*x_i-1)
+        if terms_to_sum %2 ==0:
+            x = -x
+    print(x)
 
 if __name__ == '__main__':
     pass
