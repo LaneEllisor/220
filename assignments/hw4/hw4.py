@@ -8,7 +8,7 @@ Certification of Authenticity: I certify that this assignment is entirely my own
 """
 
 from graphics import *
-from math import sqrt
+from math import sqrt, pi
 
 def squares():
     # Creates a graphical window
@@ -97,7 +97,7 @@ def rectangle():
     win.getMouse()
     win.close()
 
-#rectangle()
+rectangle()
 
 
 def circle():
@@ -114,18 +114,18 @@ def circle():
     radius.draw(win)
 
 
-    dx = radius.getX()-center.getX()
-    dy = radius.getY()-center.getY()
+    change_in_x = radius.getX()-center.getX()
+    change_in_y = radius.getY()-center.getY()
 
-    d = sqrt(dx**2+dy**2)
-    d_string = str(round(d,4))
+    dist = sqrt(change_in_x**2+change_in_y**2)
+    dist_string = str(round(dist,4))
 
-    w = Circle(center, d)
+    circ = Circle(center, dist)
 
-    w.setFill("lightblue")
-    w.draw(win)
+    circ.setFill("lightblue")
+    circ.draw(win)
 
-    text_one = Text(Point(200, 360), "Radius: " + d_string)
+    text_one = Text(Point(200, 360), "Radius: " + dist_string)
     text_one.setSize(8)
     text_one.draw(win)
 
@@ -133,17 +133,24 @@ def circle():
     win.getMouse()
     win.close()
 
-#circle()
+circle()
 
 
 
 def pi2():
-    terms_to_sum = int(input("Enter the number of terms to sum:   "))
-    for x_i in range(terms_to_sum):
-        x = 4.0/(2*x_i-1)
-        if terms_to_sum %2 ==0:
-            x = -x
-    print(x)
+    n_terms = int(input("Enter the number of terms to sum:   "))
+    x = 4
+    for i in range(n_terms+1):
+        x -= (4*(-1)**(i+1))/(2*i-1)
+        summation = abs(x)
+    accuracy = abs(pi-summation)
+    print("pi approximation: ", summation)
+    print("accuracy:", accuracy)
+
+
+
+pi2()
+
 
 if __name__ == '__main__':
     pass
