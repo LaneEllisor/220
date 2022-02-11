@@ -51,3 +51,7 @@ print(b[3]) #3rd index = 4th term bc start at 0
 
 name = [1,2, "hi", 4][3]
 print(name)
+
+a = "Hello World"
+c = a[0:5] #slicing returns same data type
+print("c=", c)

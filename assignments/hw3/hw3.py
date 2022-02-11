@@ -1,12 +1,4 @@
-"""
-Name: Chapman Ellisor
-hw3.py
 
-Problem: <Brief, one or two sentence description of the problem that this program solves, in your own words.>
-
-Certification of Authenticity:
-I certify that this assignment is entirely my own work.
-"""
 
 
 def average():
@@ -49,6 +41,7 @@ def sequence():
 
 sequence()
 
+# should have used mod %
 def pi():
     number_of_values = int(input("How many terms in the series? "))
     pi_approx = 0.
@@ -63,3 +56,15 @@ def pi():
 if __name__ == '__main__':
     pass
 
+'''
+def sequence():
+    input
+    for i in range():
+        print(i%N, end="")
+    
+    
+
+
+
+
+'''
