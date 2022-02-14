@@ -29,5 +29,13 @@ def company_name():
 
     print(domain_name)
 
+#company_name()
 
-company_name()
+
+
+
+
+
+if __name__ == '__main__':
+    pass
+
