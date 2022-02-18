@@ -49,18 +49,17 @@ def names():
     names = input("Enter a list of names: ")
     name_list = names.split(',')
 
-    print(name_list)
+    #print(name_list)
 
     for i in range(len(name_list)):
-        #splits = name_list[i].split("  ")
+        splits = name_list[i].split("  ")
+        print(splits)
 
-        space = name_list[i].find(" ")
-        first_name = name_list[0:space]
-        last_name = name_list[space + 1:]
+        print(splits[i][0])
 
-        print(space)
 
-#names()
+
+names()
 
 def thirds():
     num_sent = int(input("Enter number of sentences:  "))
@@ -73,7 +72,7 @@ def thirds():
 
 
 
-thirds()
+#thirds()
 
 def word_average():
     sentence = str(input("Enter a sentence: "))
