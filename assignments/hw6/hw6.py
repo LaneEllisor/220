@@ -1,45 +1,49 @@
 """
-Name: <your name goes here – first and last>
-<ProgramName>.py
-
-Problem: <Brief, one or two sentence description of the problem that this program solves, in your own words.>
-
-Certification of Authenticity:
-<include one of the following>
-I certify that this assignment is entirely my own work.
-I certify that this assignment is my own work, but I discussed it with: <Name(s)>
+Name: Chapman Ellisor
+hw6.py
+Problem: String Methods
+Certification of Authenticity: I certify that this assignment is entirely my own work.
 """
-
+from math import pi
 
 def cash_converter():
     input_integer = int(input("Enter an integer:  "))
-    print('%.2f' % input_integer)
+    print('%.2f' % input_integer) #format with 2 decimal places
 
 #cash_converter()
 
 def encode():
     message = str(input("Enter a message: "))
-    key = int(input("Enter a key: ")) #shift ord call
+    key = int(input("Enter a key: ")) #shifts ordinal index
     encoded_message = ""
     for i in message:
-        print(encoded_message.join(chr(ord(i)+key)), end="")
+        print(encoded_message.join(chr(ord(i)+key)), end="") #join converted unicode characters
 
-
-encode()
+#encode()
 
 
 
 def sphere_area(radius):
-    pass
+    s_area = 4*pi*radius
+    s_area = '%.2f' % s_area
+    print("The area of the sphere is: ", s_area)
 
+#sphere_area(8)
 
 def sphere_volume(radius):
-    pass
+    s_vol = (4/3) * pi * radius**3
+    s_vol = '%.2f' % s_vol
+    print("The volume of the sphere is: ", s_vol)
 
+#sphere_volume(8)
 
 def sum_n(number):
-    pass
+    sum = 0
+    for i in range(1, number+1):
+        sum = sum +i
+    print("The sum of the first {0} sums is: {1}".format(number, int(sum)))
 
+#sum_n(8)
 
 def sum_n_cubes(number):
     pass
