@@ -12,9 +12,10 @@ I certify that this assignment is my own work, but I discussed it with: <Name(s)
 
 
 def cash_converter():
-    pass
+    input_integer = int(input("Enter an integer:  "))
+    print('%.2f' % input_integer)
 
-
+cash_converter()
 def encode():
     pass
 
