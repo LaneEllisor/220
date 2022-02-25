@@ -15,9 +15,18 @@ def cash_converter():
     input_integer = int(input("Enter an integer:  "))
     print('%.2f' % input_integer)
 
-cash_converter()
+#cash_converter()
+
 def encode():
-    pass
+    message = str(input("Enter a message: "))
+    key = int(input("Enter a key: ")) #shift ord call
+    encoded_message = ""
+    for i in message:
+        print(encoded_message.join(chr(ord(i)+key)), end="")
+
+
+encode()
+
 
 
 def sphere_area(radius):
