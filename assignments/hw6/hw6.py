@@ -46,8 +46,12 @@ def sum_n(number):
 #sum_n(8)
 
 def sum_n_cubes(number):
-    pass
+    sum_cubes = 0
+    for i in range(1, number+1):
+        sum_cubes = sum_cubes + i**3
+    print("The sum of the first {0} cubes is: {1}".format(number, int(sum_cubes)))
 
+#sum_n_cubes(8)
 
 def encode_better():
     pass
