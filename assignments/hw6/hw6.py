@@ -21,8 +21,6 @@ def encode():
 
 #encode()
 
-
-
 def sphere_area(radius):
     s_area = 4*pi*radius
     s_area = '%.2f' % s_area
@@ -54,9 +52,20 @@ def sum_n_cubes(number):
 #sum_n_cubes(8)
 
 def encode_better():
-    pass
+    message = str(input("Enter a message: "))
+    key = str(input("Enter a key: "))  # shifts ordinal index
+    encoded_message = ""
+    for i in key:
+        key_ord = ord(i)
+        print(key_ord)
+    for k in (message, 110000):
+        letter = chr(k)-chr(key_ord)
+        print(letter)
+    #print(encoded_message.join(chr(ord(k)-ord(i))))
+    #for i in message:
+        #print(encoded_message.join(chr(ord(i) + key)), end="")  # join converted unicode characters
 
-
+encode_better()
 if __name__ == '__main__':
     # cash_converter()
     # encode()
