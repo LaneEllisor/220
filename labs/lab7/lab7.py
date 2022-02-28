@@ -8,20 +8,38 @@ Certification of Authenticity: I certify that this assignment is entirely my own
 """
 
 from graphics import *
-from math import *
 
-#Creating Window
+
+def cipher(message, key):
+    def format_function(string):
+        string = string.replace(" ", "")
+        string = string.upper()
+        return string
+    def return_statement(m):
+        return m
+    alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+
+    formatted_message = format_function(message)
+    formatted_key = format_function(key)
+
+    result = ""
+    for i in range(len(formatted_message)):
+        letter_i = alphabet.index(formatted_message[i])
+        key_i = alphabet.index(formatted_key[i % len(key)])
+
+        value = (letter_i+key_i) % len(alphabet)
+        result += alphabet[value]
+
+    print(result)
+
+cipher("what the fuck", "what")
+# Creating Window
 def main():
     win = GraphWin("Vigernere", 500, 500)
-    win.setBackground(color_rgb(255,255,255))
+    win.setBackground(color_rgb(255, 255, 255))
 
-
-    input_box1 = Entry(Point(250,150), 30)
+    input_box1 = Entry(Point(250, 150), 30)
     input_box1.draw(win)
-
-    message = input_box1.getText()
-
-    print(message)
 
     txt1 = Text(Point(90, 150), "Message to Code")
     txt1.draw(win)
@@ -31,65 +49,53 @@ def main():
     txt2 = Text(Point(90, 200), "Enter Keyword")
     txt2.draw(win)
 
+    # saving inputs
+    message = input_box2.getText()
+    key = input_box2.getText()
+
+    # encode button
+    txt4 = Text(Point(250, 275), "Encode")
+    txt4.draw(win)
+
+    n = 224
+    encode = Rectangle(Point(200, 250), Point(300, 300))
+    encode.draw(win)
+    encode.setFill(color_rgb(n, n, n))
+
+    txt4 = Text(Point(250, 275), "Encode")
+    txt4.draw(win)
+
+    win.getMouse()
+
+    # remove the encode button
+    clear_rectangle = Rectangle(Point(200, 250), Point(300, 300))
+    clear_rectangle.draw(win)
+    clear_rectangle.setFill(color_rgb(255, 255, 255))
+    clear_rectangle.setOutline(color_rgb(255, 255, 255))
+
+    # creating cipher box
+    cipher_box = Rectangle(Point(150, 250), Point(350, 300))
+    cipher_box.draw(win)
+
+    txt5 = Text(Point(110, 275), "Ciphered Text: ")
+    txt5.draw(win)
+
+    # putting the ciphers in
+
+
+
+
+
+
+
+
     # displaying closing message
     txt3 = Text(Point(250, 450), "Click again to close")
     txt3.setSize(8)
     txt3.draw(win)
 
-    n = 224
-
-    encode = Rectangle(Point(200, 250), Point(300, 300))
-    encode.draw(win)
-    encode.setFill(color_rgb(n,n,n))
-
-    txt4 = Text(Point(250, 275), "Encode")
-    txt4.draw(win)
-
-    #txt5 = Text(Point(250, 205), message)
-    #txt5.draw(win)
-
-    greeting1 = message
-    Text(Point(win.getWidth() / 3, 150), greeting1).draw(win)
-
     win.getMouse()
+    win.close()
 
 
-
-#main()
-
-def format_function(string):
-    string = string.replace(" ", "")
-    string = string.upper()
-    return string
-
-message = "this program will be great"
-key = "amer ican"
-
-
-
-def cipher(message, key):
-    formatted_message = format_function(message)
-    formatted_key = format_function(key)
-
-    result = ""
-    print(formatted_message)
-    print(formatted_key)
-
-    for i in range(len(formatted_message)):
-        letter_i = formatted_message[i]
-        key_i = formatted_key[i % ]
-        print(letter_i,"/n")
-
-
-        value = letter_i + key_i
-
-        #result += value
-    print(result)
-
-cipher("hello", 'ur mom')
-'''
-def encrypt():
-    return cipher(message, key)
-
-encrypt()
-'''
+main()
