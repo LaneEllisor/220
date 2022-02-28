@@ -29,10 +29,11 @@ def cipher(message, key):
 
         value = (letter_i+key_i) % len(alphabet)
         result += alphabet[value]
+    return result
 
-    print(result)
+print(cipher("this program will be great", 'python'))
 
-cipher("what the fuck", "what")
+
 # Creating Window
 def main():
     win = GraphWin("Vigernere", 500, 500)
@@ -48,10 +49,6 @@ def main():
     input_box2.draw(win)
     txt2 = Text(Point(90, 200), "Enter Keyword")
     txt2.draw(win)
-
-    # saving inputs
-    message = input_box2.getText()
-    key = input_box2.getText()
 
     # encode button
     txt4 = Text(Point(250, 275), "Encode")
@@ -80,12 +77,18 @@ def main():
     txt5 = Text(Point(110, 275), "Ciphered Text: ")
     txt5.draw(win)
 
+    # saving inputs
+    message = input_box2.getText()
+    key = input_box2.getText()
+
     # putting the ciphers in
+    res = cipher(str(message), str(key))
+
+    txt6 = Text(Point(220, 275), res)
+    txt6.draw(win)
 
 
-
-
-
+    win.getMouse()
 
 
 
@@ -98,4 +101,4 @@ def main():
     win.close()
 
 
-main()
+#main()
