@@ -10,27 +10,43 @@ I certify that this assignment is entirely my own work.
 I certify that this assignment is my own work, but I discussed it with: <Name(s)>
 """
 
+nums = [1, 2.1, 3, 4.0, 5]
 
 def add_ten(nums):
-    pass
+    for i in range(abs(len(nums))):
+        nums[i] += 10
 
 
 def square_each(nums):
-    pass
-
+    for i in range(abs(len(nums))):
+        nums[i] = nums[i]**2
 
 def sum_list(nums):
-    pass
+    sum = 0
+    for i in range(len(nums)):
+        sum += (nums[i])
+    print(sum)
+
 
 
 def to_numbers(nums):
-    pass
+    for i in range(len(nums)):
+        nums[i] = float(nums[i])
+    print(nums)
 
+nums1 = ["1", "3", "5", "7"]
+to_numbers(nums1)
 
+nums2 = [ '3', '7.2', '9']
 def sum_of_squares(nums):
-    pass
+    sum = 0
+    for i in range(len(nums)):
+        nums[i] = float(to_numbers(nums[i]))
 
-
+        nums[i] = float(square_each(nums[i]))
+        sum += nums[i]
+        print(nums[i])
+sum_of_squares(nums2)
 def starter(weight, wins):
     pass
 
