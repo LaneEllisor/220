@@ -10,43 +10,61 @@ I certify that this assignment is entirely my own work.
 I certify that this assignment is my own work, but I discussed it with: <Name(s)>
 """
 
+# define some lists to use
 nums = [1, 2.1, 3, 4.0, 5]
+nums1 = ["1", "3", "5", "7"]
+nums2 = ['3', '7.2', '9']
+
+
+# you cannot get len of list of floats.
+def length(list):
+    length = 0
+    for i in list:
+        length += 1
+    return int(length)
 
 def add_ten(nums):
-    for i in range(abs(len(nums))):
+    list_length = length(nums)
+    for i in range(list_length):
         nums[i] += 10
+    return nums
 
+add_ten(nums)
 
 def square_each(nums):
-    for i in range(abs(len(nums))):
+    list_length = length(nums)
+    for i in range(list_length):
         nums[i] = nums[i]**2
+    return nums
+
+#print(square_each(nums))
 
 def sum_list(nums):
     sum = 0
-    for i in range(len(nums)):
+    list_length = length(nums)
+    for i in range(list_length):
         sum += (nums[i])
-    print(sum)
+    return sum
 
-
+#sum_list(nums)
 
 def to_numbers(nums):
-    for i in range(len(nums)):
+    list_length = length(nums)
+    for i in range(list_length):
         nums[i] = float(nums[i])
-    print(nums)
+    return nums
 
-nums1 = ["1", "3", "5", "7"]
-to_numbers(nums1)
+#to_numbers(nums2)
 
-nums2 = [ '3', '7.2', '9']
 def sum_of_squares(nums):
-    sum = 0
-    for i in range(len(nums)):
-        nums[i] = float(to_numbers(nums[i]))
+    nums_a = to_numbers(nums)
+    nums_b = square_each(nums_a)
+    nums_c = sum_list(nums_b)
+    return nums_c
 
-        nums[i] = float(square_each(nums[i]))
-        sum += nums[i]
-        print(nums[i])
-sum_of_squares(nums2)
+#print(sum_of_squares(nums))
+
+'''
 def starter(weight, wins):
     pass
 
@@ -77,6 +95,7 @@ def circle_overlap():
 def did_overlap(circle_one, circle_two):
     pass
 
+'''
 
 if __name__ == '__main__':
     pass
