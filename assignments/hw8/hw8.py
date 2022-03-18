@@ -37,7 +37,7 @@ def square_each(nums):
     list_length = length(nums)
     for i in range(list_length):
         nums[i] = nums[i]**2
-    return nums
+
 
 #print(square_each(nums))
 
@@ -54,7 +54,7 @@ def to_numbers(nums):
     list_length = length(nums)
     for i in range(list_length):
         nums[i] = float(nums[i])
-        return nums[i]
+
 
 def sum_of_squares(nums):
     to_numbers(nums)
@@ -79,13 +79,9 @@ def starter(weight, wins):
         return False
 
 def leap_year(year):
-    leap = False
-    if (year % 4 == 0) and (year % 100 != 0):
-        leap = True
-    if (year % 100 == 0) and (year % 400 != 0):
-        leap = False
-    if (year % 400 == 0):
-        leap = True
+    leap = None
+    if (year % 4 == 0 and year % 100 != 0) or year % 400 == 0:
+        return True
     else:
         leap = False
 
@@ -214,6 +210,6 @@ def circles_overlap2():
 
     did_overlap(circle_one, circle_two)
 
-circles_overlap2()
+#circles_overlap2()
 if __name__ == '__main__':
     pass
