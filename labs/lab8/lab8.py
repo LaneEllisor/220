@@ -21,7 +21,7 @@ def did_collide(ball1, ball2):
     #checking if there is an overlap
     distance = sqrt((ball2_x - ball1_x) ** 2 + (ball2_y - ball1_y) ** 2)
 
-    if distance == radius1 + radius2:
+    if distance <= radius1 + radius2:
         hit = True #collide
     else:
         hit = False #no overlap
@@ -33,9 +33,9 @@ def hit_vertical(ball, win):
     ball_center_x = ball_center.getX()
 
     radius = ball.getRadius()
-    height = win.getHeight()
+    width = win.getWidth()
 
-    area_of_no_hit = height - radius
+    area_of_no_hit = width - radius
 
     if radius < ball_center_x < area_of_no_hit:
         hit = False #ball not hit vertical
@@ -74,8 +74,8 @@ def bumper_cars():
     height_px = 500
     win = GraphWin("Bumper Cars", width_px, height_px)
 
-    center1 = Point(rd.randint(0,500), rd.randint(0, 500))
-    center2 = Point(rd.randint(0, 500), rd.randint(0, 500))
+    center1 = Point(rd.randint(100,600), rd.randint(100, 400))
+    center2 = Point(rd.randint(100, 600), rd.randint(100, 400))
 
     radius1 = 50
     radius2 = 50
@@ -88,22 +88,36 @@ def bumper_cars():
     ball_2.setFill(get_random_color())
     ball_2.draw(win)
 
-    dx = get_random(5)
-    dy = get_random(5)
+    dx_1 = get_random(5)
+    dy_1 = get_random(5)
 
+    dx_2 = get_random(5)
+    dy_2 = get_random(5)
 
     while not win.checkMouse():
 
-        ball_1.move(dx,dy)
-        ball_2.move(dx, dy)
+        ball_1.move(dx_1,dy_1)
+        ball_2.move(dx_2, dy_2)
 
-        if did_collide(ball_1, ball_2) == True:
-            dx = -dx
-            dy = -dy
+        if did_collide(ball_1, ball_2):
+            dx_1 = -dx_1
+            dy_1 = -dy_1
+
+            dx_2 = -dx_2
+            dy_2 = -dy_2
+
+            ball_1.setFill(get_random_color())
+            ball_2.setFill(get_random_color())
         if hit_vertical(ball_1, win):
-            dx = -dx
+            dx_1 = -dx_1
+        if hit_vertical(ball_2, win):
+            dx_2 = -dx_2
         if hit_horizontal(ball_1, win):
-            dy = -dy
+            dy_1 = -dy_1
+        if hit_horizontal(ball_2, win):
+            dy_2 = -dy_2
+
+
 
     win.close()
 

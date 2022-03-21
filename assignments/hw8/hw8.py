@@ -16,7 +16,7 @@ import math as math
 nums = [1, 2.1, 3, 4.0, 5]
 nums1 = ["1", "3", "5", "7"]
 nums2 = ['3', '7.2', '9']
-
+numsm = ['5.96, 2.46, 3.36']
 
 # you cannot get len of list of floats.
 def length(list):
@@ -51,9 +51,13 @@ def sum_list(nums):
 
 
 def to_numbers(nums):
-    list_length = length(nums)
-    for i in range(list_length):
+    list_length1 = length(nums)
+    float_list = []
+    for i in range(list_length1):
         nums[i] = float(nums[i])
+
+
+
 
 
 def sum_of_squares(nums):
@@ -62,7 +66,7 @@ def sum_of_squares(nums):
     num_result = sum_list(nums)
     return num_result
 
-numsm = ['5.96, 2.46, 3.36']
+
 
 #print(length(numsm))
 #print(to_numbers(numsm))
