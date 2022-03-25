@@ -9,12 +9,17 @@ I certify that this assignment is entirely my own work.
 """
 
 def get_words(file_name):
-    with open(file_name) as f:
-        contents = f.read()
-        return contents
-print(get_words('words.txt'))
+    file = open(file_name, "r")
+    words = []
+    for line in file:
+        words.append(line.strip())
+    return words
 
 def get_random_word(words):
-    return words
+    random_word = words[randint(1, len(words))]
+    return random_word
+
+
+def letter_in_secret_word(letter)
 
 
