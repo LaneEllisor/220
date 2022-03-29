@@ -75,7 +75,6 @@ def game_over(board):
         return False
 
 
-
 def get_winner(board):
     count_X, count_O = 0,0
     for i in range(9):
