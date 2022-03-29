@@ -1,15 +1,17 @@
 """
-Name: <your name goes here – first and last>
-<ProgramName>.py
+Name: Lane Ellisor
+lab9.py
 """
 
 
 def build_board():
-    pass
-
+    list = []
+    for i in range(9):
+        list.append(i+1)
+    return list
 
 def print_board(board):
-    """ prints the values of baord """
+    """ prints the values of board """
     RED = "\033[1;31m"
     BLUE = "\033[1;36m"
     LIGHT_GRAY = "\033[0;37m"
@@ -36,28 +38,60 @@ def print_board(board):
     print(reset)
 
 
-def is_legal(board, position):
-    pass
-
-
 def fill_spot(board, position, character):
-    pass
+    character = board[position]
 
 
-def winning_game(board):
-    pass
+
+def is_legal(board, position):
+    if type(board[position]) == str:
+        return True
+    else:
+        return False
+
+
+def game_is_won(board):
+    solution_sets = ["1,2,3", "1,4,7", "1,5,9", "2,5,6", "3,6,9", "4,5,6", "7,5,3"]
+    for i in range(len(solution_sets)):
+        line = solution_sets[i].split(",")
+        for j in range(3):
+            if board[line[j]=="x"]:
+                return True
+            if board[line[j] == "o"]:
+                return True
+        else:
+            return False
+
 
 
 def game_over(board):
-    pass
+    count = 0
+    for i in range(9):
+        if board[i] == int:
+            count += 1
+    if count > 0:
+        return winning_game(board)
+    else:
+        return False
+
 
 
 def get_winner(board):
-    pass
-
+    count_X, count_O = 0,0
+    for i in range(9):
+        if board[i] == "x":
+            count_X += 1
+        elif board[i] == "o":
+            count_O += 1
+    sum_counts = count_X + count_O
+    if count_X > 0 and sum < 9:
+        return "x"
+    elif count_X == count_O:
+        return "o"
+    else:
+        None
 
 def play(board):
-    pass
 
 
 def main():

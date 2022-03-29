@@ -18,7 +18,8 @@ def get_words(file_name):
     return words
 
 def get_random_word(words):
-    random_word = str(words[randint(0,len(words)-1)])
+    random_index = randint(0, len(words)-1)
+    random_word = words[random_index]
     return random_word
 
 
