@@ -23,27 +23,36 @@ def get_random_word(words):
 
 
 def letter_in_secret_word(letter, secret_word):
-    for i in range(len(secret_word)):
-        if secret_word[i] == letter:
-            return True
-        else:
-            return False
+    if letter in secret_word:
+        return True
+    else:
+        return False
 
 
 def already_guessed(letter, guesses):
-    for letter in guesses:
-        if letter in guesses:
-            return True
-        else:
-            return False
+    if letter in guesses:
+        return True
+    else:
+        return False
 
 
 def make_hidden_secret(secret_word, guesses):
-    secret_word
+    hidden_word = ""
+    for letter in range(len(secret_word)):
+        if letter not in guesses:
+            secret_word = secret_word.replace(letter, "_")
+        else:
+            return None
+    for letter in range(len(secret_word)):
+        hidden_word = " ".join(hidden_word)
+    return hidden_word
 
 
 def won(guessed):
-    pass
+    if "_" not in guessed:
+        return True
+    else:
+        return False
 
 
 
