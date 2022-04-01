@@ -55,9 +55,6 @@ def won(guessed):
         return False
 
 
-
-
-
 def play_graphics(secret_word):
     pass
 
