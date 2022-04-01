@@ -12,9 +12,8 @@ def get_words(file_name):
     file = open(file_name, "r")
     lines = file.readlines()
     words = []
-    for line in lines:
-        words.append(line)
-    file.close
+    for words in lines:
+        words.append(words)
     return words
 
 def get_random_word(words):
@@ -40,11 +39,14 @@ def already_guessed(letter, guesses):
 
 
 def make_hidden_secret(secret_word, guesses):
-    pass
+    secret_word
 
 
 def won(guessed):
     pass
+
+
+
 
 
 def play_graphics(secret_word):
