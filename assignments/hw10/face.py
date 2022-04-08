@@ -24,10 +24,17 @@ class Face:
         self.mouth.draw(window)
 
     def smile(self):
-        pass
+        point_3 = self.mouth.move(0, -20)
+        self.mouth = Polygon(self.mouth, point_3)
+        self.mouth.draw(self.window)
 
     def shock(self):
-        pass
+        self.mouth = Circle(self.mouth, 1)
+        self.mouth.draw(self.window)
 
     def wink(self):
-        pass
+        point_3 = self.mouth.move(0, -10)
+        self.mouth = Polygon(self.mouth, point_3)
+        self.mouth.draw(self.window)
+        self.left_eye = Line(self.left_eye, 3.0)
+        self.left_eye.draw(self.window)
