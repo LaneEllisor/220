@@ -1,3 +1,10 @@
+"""
+Name: Lane Ellisor
+lab11.py
+Problem: Secret Door Game
+Certification of Authenticity:
+I certify that this assignment is entirely my own work.
+"""
 
 # importing libraries and classes
 from lab10.door import Door
